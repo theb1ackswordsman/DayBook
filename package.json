@@ -1,0 +1,12 @@
+{
+  "name": "daybook-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "seed": "npm --prefix backend run seed",
+    "seed:reset": "npm --prefix backend run seed:reset",
+    "validate:data": "npm --prefix backend run validate:data",
+    "test:backend": "npm --prefix backend test",
+    "build:frontend": "npm --prefix frontend run build"
+  }
+}

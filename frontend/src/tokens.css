@@ -1,0 +1,146 @@
+/* DESIGN Tokens - Neutral Charcoal Dark Mode & Light Mode */
+
+:root {
+  /* Colors - Light Theme */
+  --primary: #8949FF;
+  --primary-dark: #6F32E0;
+  --primary-soft: #F1EAFF;
+  --accent: #F5A65B;
+  --bg: #F6F8FA;
+  --surface: #FFFFFF;
+  --surface-raised: #EBEFF3;
+  --text: #1F2933;
+  --text-muted: #6B7785;
+  --border: #E4E8EC;
+  --danger: #D64545;
+  --private: #2F6F8F;
+  --private-soft: #E6F1F6;
+
+  /* Mood pill hues (Solid fill with WCAG AA >= 4.5:1 white text) */
+  --mood-happy: #D97706;      /* Amber */
+  --mood-calm: #7C3AED;       /* Violet */
+  --mood-sad: #2563EB;        /* Blue */
+  --mood-frustrated: #EA580C; /* Orange */
+  --mood-hopeful: #16A34A;    /* Green */
+  --mood-grateful: #DB2777;   /* Pink */
+
+  /* Typography */
+  --font-family: "Inter", system-ui, -apple-system, sans-serif;
+
+  /* Shapes per TalkLife spec: Cards 24px, Pills 9999px, Avatars 28% */
+  --radius-card: 24px;
+  --radius-button: 9999px;
+  --radius-input: 9999px;
+  --radius-chip: 9999px;
+  --radius-pill: 9999px;
+  --radius-avatar: 28%;
+
+  /* Shadows */
+  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.05);
+  --shadow-card-hover: 0 4px 12px rgba(0, 0, 0, 0.08);
+
+  /* Motion */
+  --transition-fast: 150ms ease-out;
+  --transition-normal: 200ms ease-out;
+
+  color-scheme: light;
+}
+
+/* Neutral Charcoal Dark Theme (Default when prefers-color-scheme: dark without override) */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --primary: #8949FF;
+    --primary-dark: #6F32E0;
+    --primary-soft: #38383B;
+    --accent: #F5A65B;
+    --bg: #1B1B1D;
+    --surface: #2A2A2C;
+    --surface-raised: #38383B;
+    --text: #FFFFFF;
+    --text-muted: #A0A0A6;
+    --border: #38383B;
+    --danger: #EF6B6B;
+    --private: #5BA3C4;
+    --private-soft: #38383B;
+
+    --mood-happy: #D97706;
+    --mood-calm: #7C3AED;
+    --mood-sad: #2563EB;
+    --mood-frustrated: #EA580C;
+    --mood-hopeful: #16A34A;
+    --mood-grateful: #DB2777;
+
+    --shadow-card: 0 0 0 1px #38383B;
+    --shadow-card-hover: 0 0 0 1px #8949FF;
+
+    color-scheme: dark;
+  }
+}
+
+/* Explicit Dark Theme override */
+[data-theme="dark"] {
+  --primary: #8949FF;
+  --primary-dark: #6F32E0;
+  --primary-soft: #38383B;
+  --accent: #F5A65B;
+  --bg: #1B1B1D;
+  --surface: #2A2A2C;
+  --surface-raised: #38383B;
+  --text: #FFFFFF;
+  --text-muted: #A0A0A6;
+  --border: #38383B;
+  --danger: #EF6B6B;
+  --private: #5BA3C4;
+  --private-soft: #38383B;
+
+  --mood-happy: #D97706;
+  --mood-calm: #7C3AED;
+  --mood-sad: #2563EB;
+  --mood-frustrated: #EA580C;
+  --mood-hopeful: #16A34A;
+  --mood-grateful: #DB2777;
+
+  --shadow-card: 0 0 0 1px #38383B;
+  --shadow-card-hover: 0 0 0 1px #8949FF;
+
+  color-scheme: dark;
+}
+
+/* Explicit Light Theme override */
+[data-theme="light"] {
+  --primary: #8949FF;
+  --primary-dark: #6F32E0;
+  --primary-soft: #F1EAFF;
+  --accent: #F5A65B;
+  --bg: #F6F8FA;
+  --surface: #FFFFFF;
+  --surface-raised: #EBEFF3;
+  --text: #1F2933;
+  --text-muted: #6B7785;
+  --border: #E4E8EC;
+  --danger: #D64545;
+  --private: #2F6F8F;
+  --private-soft: #E6F1F6;
+
+  --mood-happy: #D97706;
+  --mood-calm: #7C3AED;
+  --mood-sad: #2563EB;
+  --mood-frustrated: #EA580C;
+  --mood-hopeful: #16A34A;
+  --mood-grateful: #DB2777;
+
+  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.05);
+  --shadow-card-hover: 0 4px 12px rgba(0, 0, 0, 0.08);
+
+  color-scheme: light;
+}
+
+/* Accessibility: respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
